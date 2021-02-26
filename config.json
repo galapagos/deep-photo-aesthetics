@@ -15,11 +15,11 @@
         "score": 1.0,
         "Repetition": 0.0
     },
-    "save_path":"checkpoint/001",
+    "save_path":"checkpoint/002",
     "train_path": "data/train.csv",
     "val_path": "data/val.csv",
     "img_folder_path": "images/",
-    "use_cuda": true,
+    "use_cuda": false,
     "fc_lr": 1e-5,
     "fine_tune_lr": 1e-6
 }

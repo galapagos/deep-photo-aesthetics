@@ -84,3 +84,7 @@ Here are the bottom 10 rated images using images scraped from Dior's Instagram a
 [image5]: ./README_images/dior_bottom_10.png
 
 ![alt_text][image5]
+
+
+# weightsファイル
+重みファイルは[S3](https://s3.console.aws.amazon.com/s3/buckets/air-process-deep-photo-aesthetics?region=ap-northeast-1&tab=objects)に置いている。

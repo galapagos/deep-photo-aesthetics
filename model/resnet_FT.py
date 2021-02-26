@@ -3,6 +3,7 @@ import torch.nn as nn
 from torch.nn import functional as F
 from torchvision import models
 
+from typing import List
 
 class PoolFeatures(nn.Module):
     def __init__(self):
@@ -29,7 +30,7 @@ class ResNetGAPFeatures(nn.Module):
     def __init__(self, resnet, n_features=12):
         super().__init__()
         self.model = nn.Sequential(*list(resnet.children())[:4])
-        self.all_features = []
+        self.all_features: List[FeaturesMap] = []
         self.all_pooled_features = []
         self.attribute_weights = nn.Linear(15104, n_features)
 

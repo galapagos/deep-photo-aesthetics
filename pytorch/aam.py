@@ -132,8 +132,8 @@ class MyNet(nn.Module):
 
         # Use features to predict scores
         attribute_scores = self.attribute_weights(features)
-        attr = F.tanh(attribute_scores[:, :9])
-        non_neg_attr = F.sigmoid(attribute_scores[:, 9:])
+        attr = torch.tanh(attribute_scores[:, :9])
+        non_neg_attr = torch.sigmoid(attribute_scores[:, 9:])
         predictions = torch.cat([attr, non_neg_attr], dim=1)
         return predictions
 
@@ -201,8 +201,8 @@ class MyNet3(nn.Module):
 
         # Use features to predict scores
         attribute_scores = self.attribute_weights(features)
-        attr = F.tanh(attribute_scores[:, :9])
-        non_neg_attr = F.sigmoid(attribute_scores[:, 9:])
+        attr = torch.tanh(attribute_scores[:, :9])
+        non_neg_attr = torch.sigmoid(attribute_scores[:, 9:])
         predictions = torch.cat([attr, non_neg_attr], dim=1)
         return predictions
 

@@ -63,12 +63,12 @@ class ResNetGAPFeatures(nn.Module):
         # 'BalancingElements', 'ColorHarmony', 'Content', 'DoF','Light',
         #  'MotionBlur', 'Object', 'RuleOfThirds', 'VividColor'
         # which are between values -1 and 1, hence the tanh non-linearity
-        attr = F.tanh(attribute_scores[:, :9])
+        attr = torch.tanh(attribute_scores[:, :9])
 
         # The last 3 scores reflect
         # 'Repetition', 'Symmetry', 'score' which are between values 0 and 1
         # hence the sigmoid non-linearity
-        non_neg_attr = F.sigmoid(attribute_scores[:, 9:])
+        non_neg_attr = torch.sigmoid(attribute_scores[:, 9:])
         predictions = torch.cat([attr, non_neg_attr], dim=1)
         return predictions
 

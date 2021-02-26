@@ -261,8 +261,8 @@ for epoch in t:
         if use_cuda:
             inp = inp.cuda()
         output = net(inp)
-        attr = F.tanh(output[:, :9])
-        non_neg_attr = F.sigmoid(output[:, 9:])
+        attr = torch.tanh(output[:, :9])
+        non_neg_attr = torch.sigmoid(output[:, 9:])
         predictions = torch.cat([attr, non_neg_attr], dim=1)
         if use_cuda:
             targets = create_all_targets(data).cuda()
@@ -296,8 +296,8 @@ for epoch in t:
         if use_cuda:
             inp = inp.cuda()
         output = net(inp)
-        attr = F.tanh(output[:, :9])
-        non_neg_attr = F.sigmoid(output[:, 9:])
+        attr = torch.tanh(output[:, :9])
+        non_neg_attr = torch.sigmoid(output[:, 9:])
         predictions = torch.cat([attr, non_neg_attr], dim=1)
         if use_cuda:
             targets = create_all_targets(data).cuda()
